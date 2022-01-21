@@ -1,0 +1,216 @@
+* {
+  font-family: arial;
+}
+
+:root {
+  --stick-color: #008000;
+  --stick-width: 8px;
+}
+
+h2 {
+  margin: 0;
+  text-indent: 10px;
+}
+
+input[type="color"] {
+  height: 50px;
+}
+
+label {
+  display: block;
+  font-size: 50px;
+}
+
+#stickman {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#stickman:hover {
+  cursor: pointer;
+}
+
+#stickman .head {
+  height: 80px;
+  width: 80px;
+  margin: 0 auto;
+  background: var(--stick-color);
+  border-radius: 100%;
+  position: relative;
+}
+
+#stickman .head:before,
+#stickman .head:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  height: 20px;
+  width: 8px;
+  background: white;
+  border-radius: 100%;
+  animation: blink 8s infinite;
+}
+
+#stickman .head:before {
+  left: 25px;
+}
+
+#stickman .head:after {
+  right: 25px;
+}
+
+#stickman .torso {
+  margin: 0 auto;
+  height: 100px;
+  width: var(--stick-width);
+  background: var(--stick-color);
+}
+
+#stickman .arm,
+#stickman .leg {
+  position: absolute;
+  width: 60px;
+  height: var(--stick-width);
+  background: var(--stick-color);
+  border-radius: 3px;
+}
+
+#stickman .arm {
+  top: 100px;
+}
+
+#stickman .arm.left {
+  transform: rotate(-45deg);
+  left: 100px;
+}
+
+#stickman .arm.right {
+  transform: rotate(45deg);
+  left: 140px;
+}
+
+#stickman .leg {
+  top: 200px;
+  width: 80px;
+}
+
+#stickman .leg.left {
+  transform: rotate(-45deg);
+  left: 85px;
+}
+
+#stickman .leg.right {
+  transform: rotate(45deg);
+  left: 135px;
+}
+
+@keyframes blink {
+  0% {
+    height: 20px;
+  }
+  5% {
+    margin-top: 5px;
+    height: 0px;
+  }
+  10% {
+    margin-top: 0;
+    height: 20px;
+  }
+}
+
+.jump-animation {
+  animation: jump 3s ease;
+}
+
+@keyframes jump {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: -100px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
+.move-down {
+  top: 850px !important;
+}
+
+.move-up {
+  top: -200px !important;
+}
+
+.move-left {
+  left: -200px !important;
+}
+
+.move-right {
+  left: 1050px !important;
+}
+
+.bullet {
+  transition: all ease-out 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 10px;
+  width: 13px;
+  border-bottom-right-radius: 70%;
+  border-top-right-radius: 70%;
+  background: blue;
+}
+
+.spec {
+  transition: all ease-out 1.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: red;
+}
+
+.bullet.bullet-stick {
+  background: red;
+}
+
+.map {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 600px;
+  width: 800px;
+  background-color: grey;
+  overflow: hidden;
+}
+
+.scoreboard {
+  padding: 30px;
+  font-size: 62px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.scoreboard span:first-of-type {
+  color: red;
+}
+
+.scoreboard span:last-of-type {
+  color: blue;
+}
+
+.obstacle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: brown;
+}

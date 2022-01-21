@@ -1,0 +1,34 @@
+:root {
+  --player-color: red;
+  --p1-color: red;
+  --p2-color: blue;
+}
+
+.board {
+  height: 600px;
+  width: 600px;
+  margin: 60px auto;
+  padding: 0;
+}
+.board .square {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background: #ccc;
+  padding: 0;
+}
+
+.board .square:hover {
+  cursor: pointer;
+  border: 2px dotted green;
+}
+
+.board .square.p1 {
+  background: var(--p1-color);
+}
+
+.board .square.p2 {
+  background: var(--p2-color);
+}
