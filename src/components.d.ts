@@ -6,20 +6,142 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-
+    interface MadnessTank {
+    }
+    interface MapEditor {
+        "size": number;
+    }
+    interface MapTile {
+        "setTerrain": (terrain: any) => Promise<void>;
+        "terrain": "grass" | "land" | "water";
+    }
+    interface NewComponent {
+        "external": string;
+    }
+    interface PageHome {
+    }
+    interface StickTank {
+        "isColliding": (blocking: boolean) => Promise<void>;
+        "size": number;
+        "x": number;
+        "y": number;
+    }
+    interface Tank1 {
+        "isHit": () => Promise<void>;
+        "x": number;
+        "y": number;
+    }
+    interface TicTacToe {
+    }
 }
 declare global {
+    interface HTMLMadnessTankElement extends Components.MadnessTank, HTMLStencilElement {
+    }
+    var HTMLMadnessTankElement: {
+        prototype: HTMLMadnessTankElement;
+        new (): HTMLMadnessTankElement;
+    };
+    interface HTMLMapEditorElement extends Components.MapEditor, HTMLStencilElement {
+    }
+    var HTMLMapEditorElement: {
+        prototype: HTMLMapEditorElement;
+        new (): HTMLMapEditorElement;
+    };
+    interface HTMLMapTileElement extends Components.MapTile, HTMLStencilElement {
+    }
+    var HTMLMapTileElement: {
+        prototype: HTMLMapTileElement;
+        new (): HTMLMapTileElement;
+    };
+    interface HTMLNewComponentElement extends Components.NewComponent, HTMLStencilElement {
+    }
+    var HTMLNewComponentElement: {
+        prototype: HTMLNewComponentElement;
+        new (): HTMLNewComponentElement;
+    };
+    interface HTMLPageHomeElement extends Components.PageHome, HTMLStencilElement {
+    }
+    var HTMLPageHomeElement: {
+        prototype: HTMLPageHomeElement;
+        new (): HTMLPageHomeElement;
+    };
+    interface HTMLStickTankElement extends Components.StickTank, HTMLStencilElement {
+    }
+    var HTMLStickTankElement: {
+        prototype: HTMLStickTankElement;
+        new (): HTMLStickTankElement;
+    };
+    interface HTMLTank1Element extends Components.Tank1, HTMLStencilElement {
+    }
+    var HTMLTank1Element: {
+        prototype: HTMLTank1Element;
+        new (): HTMLTank1Element;
+    };
+    interface HTMLTicTacToeElement extends Components.TicTacToe, HTMLStencilElement {
+    }
+    var HTMLTicTacToeElement: {
+        prototype: HTMLTicTacToeElement;
+        new (): HTMLTicTacToeElement;
+    };
     interface HTMLElementTagNameMap {
+        "madness-tank": HTMLMadnessTankElement;
+        "map-editor": HTMLMapEditorElement;
+        "map-tile": HTMLMapTileElement;
+        "new-component": HTMLNewComponentElement;
+        "page-home": HTMLPageHomeElement;
+        "stick-tank": HTMLStickTankElement;
+        "tank-1": HTMLTank1Element;
+        "tic-tac-toe": HTMLTicTacToeElement;
     }
 }
 declare namespace LocalJSX {
+    interface MadnessTank {
+    }
+    interface MapEditor {
+        "size"?: number;
+    }
+    interface MapTile {
+        "terrain"?: "grass" | "land" | "water";
+    }
+    interface NewComponent {
+        "external"?: string;
+    }
+    interface PageHome {
+    }
+    interface StickTank {
+        "size"?: number;
+        "x"?: number;
+        "y"?: number;
+    }
+    interface Tank1 {
+        "x"?: number;
+        "y"?: number;
+    }
+    interface TicTacToe {
+    }
     interface IntrinsicElements {
+        "madness-tank": MadnessTank;
+        "map-editor": MapEditor;
+        "map-tile": MapTile;
+        "new-component": NewComponent;
+        "page-home": PageHome;
+        "stick-tank": StickTank;
+        "tank-1": Tank1;
+        "tic-tac-toe": TicTacToe;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "madness-tank": LocalJSX.MadnessTank & JSXBase.HTMLAttributes<HTMLMadnessTankElement>;
+            "map-editor": LocalJSX.MapEditor & JSXBase.HTMLAttributes<HTMLMapEditorElement>;
+            "map-tile": LocalJSX.MapTile & JSXBase.HTMLAttributes<HTMLMapTileElement>;
+            "new-component": LocalJSX.NewComponent & JSXBase.HTMLAttributes<HTMLNewComponentElement>;
+            "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
+            "stick-tank": LocalJSX.StickTank & JSXBase.HTMLAttributes<HTMLStickTankElement>;
+            "tank-1": LocalJSX.Tank1 & JSXBase.HTMLAttributes<HTMLTank1Element>;
+            "tic-tac-toe": LocalJSX.TicTacToe & JSXBase.HTMLAttributes<HTMLTicTacToeElement>;
         }
     }
 }
