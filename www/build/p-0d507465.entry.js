@@ -1,0 +1,1 @@
+import{r as s,h as r}from"./p-ab110788.js";let t=class{constructor(r){s(this,r),this.terrain="grass"}async setTerrain(s){this.terrain=s}render(){return r("span",{class:this.terrain})}};t.style=":host{display:block}";export{t as map_tile}

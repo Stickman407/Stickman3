@@ -1,0 +1,1 @@
+import{r as s,h as t,H as r}from"./p-ab110788.js";let o=class{constructor(t){s(this,t),this.internal=10}render(){return t(r,null,t("b",null,this.external))}};o.style=":host{display:block}";export{o as new_component}
